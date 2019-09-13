@@ -7,7 +7,8 @@ import (
 	"os/exec"
 )
 
-// docker run -rm -e INPUT_FILE_NAME=hihi.png -e OUTPUT_FILE_NAME=hoho.webp -v ./data:/data gowebp
+// run:
+// docker run --rm -e INPUT_FILE_NAME=hiho.png -e OUTPUT_FILE_NAME=hohi.webp -v /Users/wuriyanto/Documents/go-projects/gowebp/data/:/data gowebp
 func main() {
 
 	args := os.Args
@@ -37,7 +38,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	cmd := exec.Command("cwebp", "-lossless", "-size 500", file.Name(), "-o", tempFile.Name())
+	cmd := exec.Command("cwebp", "-lossless", "-size", "500", file.Name(), "-o", tempFile.Name())
 	if _, err := cmd.CombinedOutput(); err != nil {
 		fmt.Printf("cannot combined output: %v\n", err)
 		os.Exit(1)
