@@ -50,4 +50,4 @@ EXPOSE 8081
 
 VOLUME [ "/data" ]
 
-ENTRYPOINT ["sh", "-c", "./app data/${INPUT_FILE_NAME} data/${OUTPUT_FILE_NAME}"]
+ENTRYPOINT ["sh", "-c", "./app /data/${INPUT_FILE_NAME} /data/${OUTPUT_FILE_NAME}"]
