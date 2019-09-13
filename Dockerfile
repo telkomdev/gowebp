@@ -45,8 +45,7 @@ RUN rm -rf libwebp
 # Copy environment variable to source dir
 COPY .env $SRC_DIR.env
 
-EXPOSE 8080
-EXPOSE 8081
+EXPOSE 9000
 
 VOLUME [ "/data" ]
 
