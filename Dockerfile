@@ -35,7 +35,7 @@ RUN apk update && apk add --no-cache --update libpng-dev libjpeg-turbo-dev gifli
     && mv libwebp-1.0.3 libwebp \
     && rm libwebp-1.0.3.tar.gz \
     && cd libwebp \
-    && ./configure \
+    && ./configure --enable-everything \
     && make \
     && make install \
     && apk del $BUILD_PACKAGES
