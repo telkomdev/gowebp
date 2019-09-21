@@ -38,7 +38,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	cmd := exec.Command("cwebp", "-lossless", "-size", "500", file.Name(), "-o", tempFile.Name())
+	cmd := exec.Command("cwebp", "-q", "80", file.Name(), "-o", tempFile.Name())
 	if _, err := cmd.CombinedOutput(); err != nil {
 		fmt.Printf("cannot combined output: %v\n", err)
 		os.Exit(1)
